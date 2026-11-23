@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ====== EDIT 3 PERKARA DI BAWAH ====== -->
+  <!-- 1. Tajuk yang keluar di tab pelayar -->
+  <title>PORTAL PELAJAR KKPS</title>
+  <!-- 2. Ikon (favicon) di tab pelayar — guna pautan imej .png / .ico -->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_Malaysia.svg/120px-Coat_of_arms_of_Malaysia.svg.png" />
+  <!-- 3. Pautan penuh yang hendak dipendekkan: tukar src pada <iframe> di bawah -->
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* Butang kecil jika laman sasaran tidak boleh dipaparkan */
+    #buka {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      z-index: 10;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: rgba(0,0,0,.65);
+      color: #fff;
+      font: 13px system-ui, sans-serif;
+      text-decoration: none;
+      opacity: .35;
+      transition: opacity .2s;
+    }
+    #buka:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <iframe
+    id="laman"
+    src="https://script.google.com/macros/s/AKfycbx88F9Rt7W5jS59LnDcWQ67pIkQAEnB-3xTiS-LUZLZ8GG15lvxr5wSbxEKR_6TERTV/exec"
+    allow="camera; microphone; clipboard-read; clipboard-write; fullscreen; geolocation"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Padam baris ini jika tidak mahu butang "Buka terus" -->
+  <a id="buka" target="_blank" rel="noopener">Buka terus ↗</a>
+
+  <script>
+    // Butang "Buka terus" ikut pautan yang sama dengan iframe
+    document.getElementById("buka").href = document.getElementById("laman").src;
+  </script>
+</body>
+</html>
